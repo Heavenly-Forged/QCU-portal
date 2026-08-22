@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU Portal - Student Profile & Documents</title>
+  <link rel="icon" type="image/png" href="assets/images/qcu_logo.png">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/profile.css">
+</head>
+<body>
+
+  <div class="sidebar-overlay"></div>
+
+  <aside class="sidebar">
+    <div class="brand-section">
+      <img src="assets/images/qcu_logo.png" alt="QCU Logo" class="brand-logo-img">
+      <div>
+        <h3 class="brand-text-title">QCU Portal</h3>
+        <small class="brand-text-sub">San Bartolome</small>
+      </div>
+    </div>
+    
+    <ul class="nav-list">
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      <li><a href="profile.html" class="nav-link active">Student Profile</a></li>
+      <li><a href="announcements.html" class="nav-link">Announcements</a></li>
+      <li><a href="assessment.html" class="nav-link">Assessment Slip</a></li>
+      <li><a href="grades.html" class="nav-link">Grades & GWA</a></li>
+      <li><a href="schedule.html" class="nav-link">Class Schedule</a></li>
+      <li><a href="organizations.html" class="nav-link">Organizations</a></li>
+    </ul>
+
+    <button class="btn-logout" id="logoutBtn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+        <polyline points="16 17 21 12 16 7"></polyline>
+        <line x1="21" y1="12" x2="9" y2="12"></line>
+      </svg>
+      Sign Out
+    </button>
+  </aside>
+
+  <div class="app-container">
+    <header class="top-header">
+      <div class="header-left">
+        <button class="menu-toggle-btn" aria-label="Toggle menu">☰</button>
+        <h2 class="header-page-title">Student Profile & Documents</h2>
+      </div>
+      <div class="user-badge"><strong id="studentHeaderName">Juan Dela Cruz</strong></div>
+    </header>
+
+    <main class="content-body">
+      <div class="profile-layout-grid">
+        
+        <!-- Left: Student Information Card -->
+        <section class="panel-card profile-info-card">
+          <div class="profile-header-banner">
+            <div class="avatar-circle">JD</div>
+            <div class="profile-title-group">
+              <h3 id="studentFullName">Juan Dela Cruz</h3>
+              <p class="text-muted" id="studentProgram">BS in Information Technology</p>
+              <span class="badge badge-success" id="studentStatusBadge">Regular - Enrolled</span>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <div class="info-meta-grid">
+            <div class="info-item">
+              <label>Student Number</label>
+              <span id="studentIdDisplay">23-2365</span>
+            </div>
+            <div class="info-item">
+              <label>Year & Section</label>
+              <span id="yearSectionDisplay">3rd Year - SBIT-3A</span>
+            </div>
+            <div class="info-item">
+              <label>Institutional Email</label>
+              <span id="studentEmailDisplay">juan.delacruz@qcu.edu.ph</span>
+            </div>
+            <div class="info-item">
+              <label>Contact Number</label>
+              <span id="studentContactDisplay">+63 912 345 6789</span>
+            </div>
+            <div class="info-item">
+              <label>Campus</label>
+              <span id="campusDisplay">San Bartolome Main Campus</span>
+            </div>
+            <div class="info-item">
+              <label>Admission Date</label>
+              <span id="admissionDateDisplay">August 2023</span>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <!-- Account Security Action -->
+          <div class="security-action-group">
+            <button type="button" class="btn-change-password" id="openChangePassModalBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              Change Account Password
+            </button>
+          </div>
+        </section>
+
+        <!-- Right: Checklists Column -->
+        <div class="checklists-column">
+          
+          <!-- 1. Registrar Academic Documents -->
+          <section class="panel-card document-status-card">
+            <div class="panel-header">
+              <h3>Registrar Document Checklist</h3>
+              <span class="badge badge-warning" id="docSummaryBadge">1 Pending Document</span>
+            </div>
+            <p class="text-muted text-sm">Official admission credentials and academic records verified by the University Registrar.</p>
+
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Document Name</th>
+                    <th>Type</th>
+                    <th>Date Submitted</th>
+                    <th>Verification Status</th>
+                  </tr>
+                </thead>
+                <tbody id="documentTableRows">
+                  <!-- Dynamic Rows -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 2. Medical & Health Clearance -->
+          <section class="panel-card document-status-card">
+            <div class="panel-header">
+              <h3>Medical & Health Clearance</h3>
+              <span class="badge badge-success" id="medSummaryBadge">Cleared for AY 2026-2027</span>
+            </div>
+            <p class="text-muted text-sm">Annual medical examinations and health requirements verified by the QCU Health Services Unit.</p>
+
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Requirement</th>
+                    <th>Facility / Clinic</th>
+                    <th>Date Cleared</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="medicalTableRows">
+                  <!-- Dynamic Rows -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Change Password Modal -->
+  <div class="modal-backdrop" id="passwordModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3>Change Account Password</h3>
+          <p class="text-muted text-sm">Enter your current password and choose a strong new password.</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="closePassModalBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <form id="changePasswordForm">
+        <div id="passwordAlertBox" class="alert-message" style="display: none;"></div>
+
+        <div class="form-group">
+          <label for="currentPassword">Current Password</label>
+          <input type="password" id="currentPassword" class="form-input" placeholder="Enter current password" required autocomplete="current-password">
+        </div>
+
+        <div class="form-group">
+          <label for="newPassword">New Password</label>
+          <input type="password" id="newPassword" class="form-input" placeholder="Minimum 8 characters" required minlength="8" autocomplete="new-password">
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm New Password</label>
+          <input type="password" id="confirmPassword" class="form-input" placeholder="Re-enter new password" required minlength="8" autocomplete="new-password">
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" id="cancelPassModalBtn">Cancel</button>
+          <button type="submit" class="btn-submit">Update Password</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Logout Confirmation Modal -->
+  <div class="logout-modal-backdrop" id="logoutModal">
+    <div class="logout-modal-box">
+      <h3>Sign Out</h3>
+      <p>Are you sure you want to sign out of your QCU Student Portal account?</p>
+      <div class="logout-modal-actions">
+        <button type="button" class="logout-btn-cancel" id="cancelLogoutBtn">Cancel</button>
+        <button type="button" class="logout-btn-confirm" id="confirmLogoutBtn">Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/modules/profile.js"></script>
+</body>
+</html>
