@@ -1,0 +1,65 @@
+/* frontend/css/pages/schedule.css */
+
+.schedule-header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.term-badge {
+  background-color: var(--qcu-surface);
+  border: 1px solid var(--qcu-border);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--qcu-primary);
+}
+
+.schedule-card {
+  background: var(--qcu-surface);
+  border: 1px solid var(--qcu-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+}
+
+.timetable {
+  width: 100%;
+  min-width: 680px; /* Enables horizontal scroll on mobile */
+  border-collapse: collapse;
+}
+
+.timetable th, 
+.timetable td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--qcu-border);
+  font-size: 0.85rem;
+}
+
+.timetable th {
+  color: var(--qcu-text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  background-color: #F8FAFC;
+}
+
+.day-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: #EFF6FF;
+  color: #1E40AF;
+}
+
+.units-breakdown {
+  font-size: 0.75rem;
+  color: var(--qcu-text-muted);
+}

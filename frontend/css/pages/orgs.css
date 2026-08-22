@@ -1,0 +1,157 @@
+/* frontend/css/pages/orgs.css */
+
+.orgs-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex-grow: 1;
+  max-width: 400px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--qcu-border);
+  background-color: var(--qcu-surface);
+  color: var(--qcu-text-main);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--qcu-primary);
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab-btn {
+  background: var(--qcu-surface);
+  border: 1px solid var(--qcu-border);
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  color: var(--qcu-text-muted);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover, .tab-btn.active {
+  background: var(--qcu-primary);
+  color: #FFFFFF;
+  border-color: var(--qcu-primary);
+}
+
+/* Organizations Grid */
+.orgs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.org-card {
+  background: var(--qcu-surface);
+  border: 1px solid var(--qcu-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.org-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.org-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.org-avatar {
+  width: 48px;
+  height: 48px;
+  background: #E2E8F0;
+  color: var(--qcu-primary);
+  font-weight: 800;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.org-title h3 {
+  font-size: 1.05rem;
+  color: var(--qcu-primary);
+  margin-bottom: 4px;
+}
+
+.org-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge-academic {
+  background: #EFF6FF;
+  color: #1E40AF;
+}
+
+.badge-non-academic {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.org-desc {
+  font-size: 0.875rem;
+  color: var(--qcu-text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.org-meta {
+  border-top: 1px solid var(--qcu-border);
+  padding-top: 12px;
+  font-size: 0.8rem;
+  color: var(--qcu-text-main);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.org-btn {
+  margin-top: 14px;
+  background: var(--qcu-accent);
+  color: var(--qcu-primary-dark);
+  font-weight: 700;
+  border: none;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.org-btn:hover {
+  opacity: 0.9;
+}

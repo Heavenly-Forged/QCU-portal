@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU Portal - Sign In</title>
+  <link rel="icon" type="image/png" href="assets/images/qcu_logo.png">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/login.css">
+</head>
+<body class="login-page-body">
+
+  <!-- Background Animated Slideshow -->
+  <div class="bg-slideshow">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+  </div>
+  <div class="bg-overlay"></div>
+
+  <!-- Login Card -->
+  <div class="login-container">
+    <div class="login-header">
+      <img src="assets/images/qcu_logo.png" alt="QCU Official Logo" class="login-logo-img">
+      <h2>QUEZON CITY UNIVERSITY</h2>
+      <p>Student & Faculty Academic Portal</p>
+    </div>
+
+    <div id="errorAlert" class="alert-message alert-error"></div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="studentId">Student / Employee Number</label>
+        <input type="text" id="studentId" class="form-input" placeholder="e.g., 23-2365" required autocomplete="username">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-input-wrapper">
+          <input type="password" id="password" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+          <button type="button" id="togglePasswordBtn" class="password-toggle-btn" aria-label="Toggle password visibility">
+            <!-- Default Eye Icon (Show) -->
+            <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-login">Sign In</button>
+    </form>
+
+    <div class="portal-footer">
+      <p>CHED-UniFAST Accredited Higher Education Institution</p>
+      <p>© 2026 Quezon City University</p>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

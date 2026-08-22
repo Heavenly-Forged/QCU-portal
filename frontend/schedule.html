@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCU Portal - Class Schedule</title>
+  <link rel="icon" type="image/png" href="assets/images/qcu_logo.png">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/schedule.css">
+</head>
+<body>
+
+  <!-- Mobile Overlay Backdrop -->
+  <div class="sidebar-overlay"></div>
+
+  <!-- Shared Sidebar -->
+  <aside class="sidebar">
+    <div class="brand-section">
+      <img src="assets/images/qcu_logo.png" alt="QCU Logo" class="brand-logo-img">
+      <div>
+        <h3 style="font-size: 0.95rem; color: #FFFFFF;">QCU Portal</h3>
+        <small style="color: var(--qcu-accent);">San Bartolome</small>
+      </div>
+    </div>
+    
+    <ul class="nav-list">
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      <li><a href="announcements.html" class="nav-link">Announcements</a></li>
+      <li><a href="assessment.html" class="nav-link">Assessment Slip</a></li>
+      <li><a href="grades.html" class="nav-link">Grades & GWA</a></li>
+      <li><a href="schedule.html" class="nav-link active">Class Schedule</a></li>
+      <li><a href="organizations.html" class="nav-link">Organizations</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <button class="btn-logout" id="logoutBtn">
+        <span>🚪</span> Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <div class="app-container">
+    <header class="top-header">
+      <div class="header-left">
+        <button class="menu-toggle-btn" aria-label="Toggle menu">☰</button>
+        <h2 style="font-size: 1.1rem;">Official Class Timetable</h2>
+      </div>
+      <div class="user-badge">Student: <strong>Juan Dela Cruz</strong></div>
+    </header>
+
+    <main class="content-body">
+      <div class="schedule-header-actions">
+        <div class="term-badge">1st Semester • A.Y. 2026-2027</div>
+        <div style="font-size: 0.85rem; color: var(--qcu-text-muted);">
+          Total Academic Units: <strong>12.0</strong>
+        </div>
+      </div>
+
+      <section class="schedule-card">
+        <div class="table-responsive">
+          <table class="timetable">
+            <thead>
+              <tr>
+                <th>Subject Code</th>
+                <th>Subject Description</th>
+                <th>Units (Lec/Lab)</th>
+                <th>Day</th>
+                <th>Time Slot</th>
+                <th>Room</th>
+                <th>Assigned Professor</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleTableBody">
+              <!-- Rendered by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Logout Confirmation Modal -->
+  <div class="logout-modal-backdrop" id="logoutModal">
+    <div class="logout-modal-box">
+      <h3>Sign Out</h3>
+      <p>Are you sure you want to sign out of your QCU Student Portal account?</p>
+      <div class="logout-modal-actions">
+        <button type="button" class="logout-btn-cancel" id="cancelLogoutBtn">Cancel</button>
+        <button type="button" class="logout-btn-confirm" id="confirmLogoutBtn">Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/modules/schedule.js"></script>
+</body>
+</html>

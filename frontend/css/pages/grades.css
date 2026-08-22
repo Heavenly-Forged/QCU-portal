@@ -1,0 +1,163 @@
+/* frontend/css/pages/grades.css */
+
+.grades-header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.semester-select {
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--qcu-border);
+  background-color: var(--qcu-surface);
+  color: var(--qcu-text-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.btn-scale-info {
+  background-color: transparent;
+  color: var(--qcu-primary);
+  border: 1px solid var(--qcu-primary);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-scale-info:hover {
+  background-color: var(--qcu-primary);
+  color: #FFFFFF;
+}
+
+.gwa-summary-card {
+  background: var(--qcu-surface);
+  border: 1px solid var(--qcu-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.gwa-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.gwa-stat span.label {
+  font-size: 0.75rem;
+  color: var(--qcu-text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.gwa-stat span.num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--qcu-primary);
+  margin-top: 2px;
+}
+
+.grades-card {
+  background: var(--qcu-surface);
+  border: 1px solid var(--qcu-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+}
+
+.grades-table {
+  width: 100%;
+  min-width: 580px; /* Scrolls smoothly on phone */
+  border-collapse: collapse;
+}
+
+.grades-table th, 
+.grades-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--qcu-border);
+  font-size: 0.85rem;
+}
+
+.grades-table th {
+  color: var(--qcu-text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  background-color: #F8FAFC;
+}
+
+.badge-pass {
+  background-color: #DCFCE7;
+  color: #15803D;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.badge-fail {
+  background-color: #FEE2E2;
+  color: #B91C1C;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 43, 102, 0.4);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 16px;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--qcu-surface);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-md);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--qcu-border);
+  padding-bottom: 10px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--qcu-text-muted);
+  line-height: 1;
+}

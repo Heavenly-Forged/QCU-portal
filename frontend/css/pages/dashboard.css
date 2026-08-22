@@ -1,0 +1,140 @@
+/* frontend/css/pages/dashboard.css */
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  background: var(--qcu-surface);
+  border: 1px solid var(--qcu-border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.metric-card h4 {
+  font-size: 0.75rem;
+  color: var(--qcu-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.metric-card .value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--qcu-primary);
+  margin-bottom: 8px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.badge-success {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.badge-info {
+  background: #E0F2FE;
+  color: #0369A1;
+}
+
+/* Two-column layout that safely drops to 1-column on mobile */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel-card {
+  background: var(--qcu-surface);
+  border: 1px solid var(--qcu-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--qcu-border);
+  padding-bottom: 10px;
+}
+
+.panel-header h3 {
+  font-size: 1rem;
+  color: var(--qcu-primary);
+}
+
+.schedule-table {
+  width: 100%;
+  min-width: 480px; /* Forces scroll inside .table-responsive instead of overflowing screen */
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--qcu-border);
+  font-size: 0.85rem;
+}
+
+.schedule-table th {
+  color: var(--qcu-text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  background: #F8FAFC;
+}
+
+.announcement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.announcement-item {
+  border-left: 3px solid var(--qcu-accent);
+  padding-left: 12px;
+}
+
+.announcement-item h5 {
+  font-size: 0.9rem;
+  color: var(--qcu-text-main);
+  margin-bottom: 3px;
+}
+
+.announcement-item p {
+  font-size: 0.8rem;
+  color: var(--qcu-text-muted);
+  line-height: 1.4;
+}
+
+.announcement-date {
+  font-size: 0.7rem;
+  color: #94A3B8;
+  margin-top: 4px;
+  display: block;
+}

@@ -1,0 +1,206 @@
+/* frontend/css/pages/login.css */
+
+.login-page-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 16px;
+  background-color: var(--qcu-primary-dark);
+}
+
+/* Background Crossfade Slideshow */
+.bg-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: campusCrossfade 18s infinite;
+}
+
+/* 3 Campus Slides (Replace URLs with your local images in assets/images/) */
+.slide:nth-child(1) {
+  background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80');
+  animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+  background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80');
+  animation-delay: 6s;
+}
+
+.slide:nth-child(3) {
+  background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80');
+  animation-delay: 12s;
+}
+
+/* Keyframe Animation: Smooth 6-second cycle per slide */
+@keyframes campusCrossfade {
+  0% { opacity: 0; transform: scale(1); }
+  10% { opacity: 1; }
+  33% { opacity: 1; }
+  43% { opacity: 0; transform: scale(1.05); }
+  100% { opacity: 0; }
+}
+
+/* Navy Vignette Overlay for Readability */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 27, 64, 0.88) 0%, rgba(0, 43, 102, 0.78) 100%);
+  z-index: 2;
+}
+
+.login-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 420px;
+  background: var(--qcu-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  padding: 32px 28px;
+  border-top: 5px solid var(--qcu-accent);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-logo-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.login-header h2 {
+  font-size: 1.2rem;
+  color: var(--qcu-primary);
+  letter-spacing: 0.5px;
+}
+
+.login-header p {
+  font-size: 0.85rem;
+  color: var(--qcu-text-muted);
+  margin-top: 2px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--qcu-text-main);
+  text-transform: uppercase;
+}
+
+.form-input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--qcu-border);
+  background-color: #F8FAFC;
+  font-size: 0.95rem;
+  color: var(--qcu-text-main);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--qcu-primary);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 43, 102, 0.12);
+}
+
+.btn-login {
+  width: 100%;
+  background-color: var(--qcu-primary);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-login:hover {
+  background-color: var(--qcu-primary-dark);
+}
+
+.alert-message {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.alert-error {
+  background-color: #FEE2E2;
+  color: #B91C1C;
+  border: 1px solid #FCA5A5;
+}
+
+.portal-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--qcu-text-muted);
+  margin-top: 20px;
+  border-top: 1px solid var(--qcu-border);
+  padding-top: 14px;
+}
+
+/* Password Input Wrapper with Eye Toggle */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-input-wrapper .form-input {
+  padding-right: 42px; /* Leave room for the icon */
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--qcu-text-muted);
+  transition: color 0.2s ease;
+}
+
+.password-toggle-btn:hover {
+  color: var(--qcu-primary);
+}
+
+.password-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
