@@ -49,7 +49,7 @@ function renderAssessmentSlip(data) {
     cellName.textContent = item.name;
 
     const cellAmount = document.createElement('td');
-    cellAmount.style.textAlign = 'right';
+    cellAmount.className = 'text-right';
     cellAmount.textContent = item.amount.toLocaleString('en-PH', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2

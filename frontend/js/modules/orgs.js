@@ -63,7 +63,7 @@ function renderOrganizations() {
   });
 
   if (filtered.length === 0) {
-    container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--qcu-text-muted); padding: 40px;">No student organizations found matching your search.</p>`;
+    container.innerHTML = container.innerHTML = `<p class="empty-state-message">No results found.</p>`;
     return;
   }
 

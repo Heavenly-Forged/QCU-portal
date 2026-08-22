@@ -331,3 +331,47 @@ body {
 .logout-btn-confirm:hover {
   opacity: 0.9;
 }
+
+/* =================================================== */
+/* 5. TYPOGRAPHY, BRANDING & UTILITY CLASSES           */
+/* =================================================== */
+
+.brand-text-title {
+  font-size: 0.95rem;
+  color: #FFFFFF;
+}
+
+.brand-text-sub {
+  color: var(--qcu-accent);
+}
+
+.header-page-title {
+  font-size: 1.1rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--qcu-text-muted);
+}
+
+.text-accent {
+  color: var(--qcu-accent);
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.empty-state-message {
+  text-align: center;
+  color: var(--qcu-text-muted);
+  padding: 40px;
+  grid-column: 1 / -1;
+}

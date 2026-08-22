@@ -52,7 +52,7 @@ function renderAnnouncements() {
   });
 
   if (filtered.length === 0) {
-    feed.innerHTML = `<p style="text-align: center; color: var(--qcu-text-muted); padding: 40px;">No announcements found matching your criteria.</p>`;
+    feed.innerHTML = container.innerHTML = `<p class="empty-state-message">No results found.</p>`;
     return;
   }
 
