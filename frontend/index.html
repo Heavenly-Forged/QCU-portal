@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QCU Portal - Sign In</title>
+  <title>QCU Portal - Student Login</title>
   <link rel="icon" type="image/png" href="assets/images/qcu_logo.png">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/global.css">
@@ -11,7 +11,7 @@
 </head>
 <body class="login-page-body">
 
-  <!-- Background Animated Slideshow -->
+  <!-- Background Crossfade Slideshow -->
   <div class="bg-slideshow">
     <div class="slide"></div>
     <div class="slide"></div>
@@ -19,28 +19,27 @@
   </div>
   <div class="bg-overlay"></div>
 
-  <!-- Login Card -->
+  <!-- Login Card Container -->
   <div class="login-container">
     <div class="login-header">
-      <img src="assets/images/qcu_logo.png" alt="QCU Official Logo" class="login-logo-img">
-      <h2>QUEZON CITY UNIVERSITY</h2>
-      <p>Student & Faculty Academic Portal</p>
+      <img src="assets/images/qcu_logo.png" alt="QCU Logo" class="login-logo-img">
+      <h2>Quezon City University</h2>
+      <p>Student Information Portal</p>
     </div>
 
-    <div id="errorAlert" class="alert-message alert-error"></div>
+    <div id="loginAlertBox" class="alert-message alert-error"></div>
 
     <form id="loginForm">
       <div class="form-group">
-        <label for="studentId">Student / Employee Number</label>
+        <label for="studentId">Student Number</label>
         <input type="text" id="studentId" class="form-input" placeholder="e.g., 23-2365" required autocomplete="username">
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
         <div class="password-input-wrapper">
-          <input type="password" id="password" class="form-input" placeholder="••••••••" required autocomplete="current-password">
-          <button type="button" id="togglePasswordBtn" class="password-toggle-btn" aria-label="Toggle password visibility">
-            <!-- Default Eye Icon (Show) -->
+          <input type="password" id="password" class="form-input" placeholder="Enter your password" required autocomplete="current-password">
+          <button type="button" class="password-toggle-btn" id="togglePasswordBtn" aria-label="Show password">
             <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
               <circle cx="12" cy="12" r="3"></circle>
@@ -49,15 +48,56 @@
         </div>
       </div>
 
+      <div class="form-helper-row">
+        <button type="button" class="forgot-pass-link" id="openForgotModalBtn">Forgot Password?</button>
+      </div>
+
       <button type="submit" class="btn-login">Sign In</button>
     </form>
 
     <div class="portal-footer">
-      <p>CHED-UniFAST Accredited Higher Education Institution</p>
-      <p>© 2026 Quezon City University</p>
+      <span>Quezon City University &bull; San Bartolome Main Campus</span>
     </div>
   </div>
 
-  <script src="js/auth.js"></script>
+  <!-- Static Forgot Password Guidance Modal -->
+  <div class="modal-backdrop" id="forgotPassModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3>Account Recovery & Password Reset</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="closeForgotModalBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body-content">
+        <p>If you have forgotten your portal password or are locked out of your account, password resets are processed in person to protect student identity.</p>
+        
+        <div class="instruction-box">
+          <strong>Where to proceed:</strong>
+          <ul>
+            <li><strong>QCU MIS / IT Helpdesk</strong> — Administration Building, Ground Floor</li>
+            <li><strong>University Registrar's Office</strong> — Window 4 (Student Records Assistance)</li>
+          </ul>
+        </div>
+
+        <div class="requirements-box">
+          <strong>What to bring:</strong>
+          <ul>
+            <li>Valid <strong>Student ID</strong> (or Certificate of Registration / Assessment Slip).</li>
+            <li>Official <strong>@qcu.edu.ph</strong> student email details.</li>
+          </ul>
+        </div>
+
+        <p class="text-muted" style="font-size: 0.8rem; margin-top: 14px;">Office Hours: Monday to Friday, 8:00 AM – 5:00 PM.</p>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-submit" id="dismissForgotModalBtn">Understood</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/modules/login.js"></script>
 </body>
 </html>
