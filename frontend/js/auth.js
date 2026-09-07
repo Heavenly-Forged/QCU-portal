@@ -81,3 +81,73 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// frontend/js/auth.js
+const API_BASE_URL = "http://127.0.0.1:8000/api/v1";
+
+/**
+ * Sends login credentials to the FastAPI backend.
+ * Stores JWT and role on success, then redirects.
+ */
+async function handleLogin(accountNumber, password) {
+  const errorElement = document.getElementById("login-error-msg");
+  if (errorElement) errorElement.textContent = "";
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        account_number: accountNumber.trim(),
+        password: password,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      // Backend returned a 400/401/403/422 error
+      throw new Error(data.detail || "Invalid login credentials.");
+    }
+
+    // Persist JWT token and metadata
+    sessionStorage.setItem("access_token", data.access_token);
+    sessionStorage.setItem("account_number", data.account_number);
+    sessionStorage.setItem("user_role", data.role);
+
+    // Role-based routing
+    routeUserByRole(data.role);
+
+  } catch (error) {
+    if (errorElement) {
+      errorElement.textContent = error.message;
+      errorElement.style.display = "block";
+    } else {
+      alert(error.message);
+    }
+  }
+}
+
+/**
+ * Directs the user to their designated dashboard view.
+ */
+function routeUserByRole(role) {
+  switch (role) {
+    case "STUDENT":
+      window.location.href = "dashboard.html"; // Replace with your student dashboard path
+      break;
+    case "FACULTY":
+      window.location.href = "faculty.html";
+      break;
+    case "SUPER_ADMIN":
+    case "REGISTRAR_ADMIN":
+    case "CLINIC_ADMIN":
+    case "OSA_ADMIN":
+      window.location.href = "admin.html"; // Unified admin shell
+      break;
+    default:
+      window.location.href = "index.html";
+  }
+}
